@@ -27,8 +27,8 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
@@ -38,32 +38,32 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|name|integer|null: false, foreign_key: true|
-|email|integer|null: false, foreign_key: true|
+|name|references|null: false, foreign_key: true|
+|email|references|null: false, foreign_key: true|
 |password|string|null: false|
-|nickname|string|null: false|
 
 ### Association
-- has_many :groups
+- has_many :groups, through: member
 - has_many :messages
 
 ## groupテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|name|references|null: false, foreign_key: true|
 
 ### Association
-- has_many :users
+- has_many :users through: member
 - has_many :messages
 
 ## messageテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|reference|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user|reference|null: false, foreign_key: true|
+|group|reference|null: false, foreign_key: true|
+|text|text|null: false|
+|image|string|
 
 ### Association
 - belongs_to :group
