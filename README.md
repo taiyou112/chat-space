@@ -51,10 +51,11 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|name|references|null: false|
+|name|string|null: false|
 
 ### Association
 - has_many :users, through: :members
+- has_many :members
 - has_many :messages
 
 ## messageテーブル
