@@ -24,30 +24,3 @@
           = icon('fa','image',class: 'icon')
           = f.file_field :image
       %input.form__submit{type: 'submit', value: 'Send'}
--# .chat
--#   .header
--#     .left-header
--#       %h2.current__group__name
--#         = @group.name
--#         .member 
--#           Member : 
--#           %ul
--#             - @group.users.each do |user| 
--#               = user.name
-            
--#       .right-header
--#         =link_to edit_group_path(@group) do
--#           Edit
-    
--#   .messages
--#     = render @messages
-      
--#   .message
--#     .new__message
--#       = form_for [@group, @message] do |f|
--#         = f.text_field :content, class: 'input__box__text', placeholder: 'type a message'
--#         .input__box
--#           = f.label :image, class: 'input__box__image' do
--#             = icon('far', 'image')
--#             = f.file_field :image, class: 'input__box__image__file'
--#         = f.submit 'Send', class: 'submit__btn'
